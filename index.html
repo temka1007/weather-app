@@ -1,12 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/6dc216154b41f1f9d461.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <title>Weather App</title>
-</head>
-<body>
+  </head>
+  <body>
+    <main>
+      <div class="forecast-container">
+        <div class="class-top">
+          <div class="clock">
+            <div class="hand hour" data-hour-hand=""></div>
+            <div class="hand minute" data-minute-hand></div>
+            <div class="hand second" data-second-hand></div>
+            <div class="number-container one">
+              <div class="number"></div>
+            </div>
+            <div class="number-container two">
+              <div class="number"></div>
+            </div>
+            <div class="number-container three">
+              <div class="number"></div>
+            </div>
+            <div class="number-container four">
+              <div class="number"></div>
+            </div>
+            <div class="number-container five">
+              <div class="number"></div>
+            </div>
+            <div class="number-container six">
+              <div class="number"></div>
+            </div>
+            <div class="number-container seven">
+              <div class="number"></div>
+            </div>
+            <div class="number-container eigth">
+              <div class="number"></div>
+            </div>
+            <div class="number-container nine">
+              <div class="number"></div>
+            </div>
+            <div class="number-container ten">
+              <div class="number"></div>
+            </div>
+            <div class="number-container eleven">
+              <div class="number"></div>
+            </div>
+            <div class="number-container twelve">
+              <div class="number"></div>
+            </div>
+          </div>
+          <div class="weather-container">
+            <div class="city">London, UK</div>
+            <div class="date">Mar 29 2023</div>
+            <div class="weather">
+              <div class="now">
+                <div class="icon">
+                  <span class="material-symbols-outlined">
+                    cloudy_snowing
+                  </span>
+                </div>
+                <div class="temperature">24°C</div>
+                <div class="time">Now</div>
+              </div>
+              <div class="after-two-hour">
+                <div class="icon">
+                  <span class="material-symbols-outlined">
+                    partly_cloudy_day
+                  </span>
+                </div>
+                <div class="temperature">25°C</div>
+                <div class="time">13:00</div>
+              </div>
+              <div class="after-four-hour">
+                <div class="icon">
+                  <span class="material-symbols-outlined"> clear_night </span>
+                </div>
+                <div class="temperature">12°C</div>
+                <div class="time">15:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="inside"></div>
+        <div class="shadow"></div>
+      </div>
+      <div class="input-container">
+        <input type="text" placeholder="City Name" pattern="[A-Za-z]+" maxlength="35"/>
+        <button class="search">
+          <span class="material-symbols-outlined"> search </span>
+        </button>
+        <button class="unit-converter">F</button>
+      </div>
+    </main>
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>
