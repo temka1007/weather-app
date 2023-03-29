@@ -1,0 +1,315 @@
+* {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+@font-face {
+  font-family: URW DIN light;
+  src: url(./Fonts/URW-DIN-light.ttf);
+}
+@font-face {
+  font-family: URW DIN medium;
+  src: url(./Fonts/URW-DIN-medium.ttf);
+}
+@font-face {
+  font-family: URW DIN bold;
+  src: url(./Fonts/URW-DIN-bold.ttf);
+}
+@font-face {
+  font-family: URW DIN extra-bold;
+  src: url(./Fonts/URW-DIN-extra-bold.ttf);
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./images/giphy.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* main content and overlapping */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forecast-container {
+  position: relative;
+  height: 500px;
+  width: 940px;
+  /* height: 440px;
+  width: 880px; */
+}
+.forecast-container > div {
+  height: 440px;
+  width: 880px;
+  border-radius: 220px;
+}
+.class-top {
+  position: absolute;
+  z-index: 3;
+  background-color: transparent;
+  border: 3px solid #565655;
+  mix-blend-mode: multiply;
+  box-shadow: inset 20px 20px 0px rgba(82, 82, 81, 0.2),
+    20px 20px 0px rgba(82, 82, 81, 0.5);
+}
+.inside {
+  position: absolute;
+  z-index: 2;
+  background-color: #dadcd1;
+  border: 3px solid #c0c0bd;
+  top: 20px;
+  left: 20px;
+  mix-blend-mode: normal;
+}
+.shadow {
+  position: absolute;
+  z-index: 1;
+  background-color: black;
+  top: 45px;
+  left: 40px;
+}
+
+/* clock */
+
+.clock {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  top: 85px;
+  left: 100px;
+  border-radius: 50%;
+  border: 3px solid rgb(82, 82, 81);
+  background-color: transparent;
+  box-shadow: inset 2px 2px 2px rgba(82, 82, 81, 0.5),
+    3px 3px 2px rgba(82, 82, 81, 0.5);
+}
+.hand {
+  border: none;
+}
+.clock .number-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  transform: rotate(var(--rotation));
+  border-radius: 50%;
+  padding-top: 4px;
+}
+.clock .one {
+  --rotation: 30deg;
+}
+.clock .two {
+  --rotation: 60deg;
+}
+.clock .three {
+  --rotation: 90deg;
+}
+.clock .four {
+  --rotation: 120deg;
+}
+.clock .five {
+  --rotation: 150deg;
+}
+.clock .six {
+  --rotation: 180deg;
+}
+.clock .seven {
+  --rotation: 210deg;
+}
+.clock .eigth {
+  --rotation: 240deg;
+}
+.clock .nine {
+  --rotation: 270deg;
+}
+.clock .ten {
+  --rotation: 300deg;
+}
+.clock .eleven {
+  --rotation: 330deg;
+}
+.clock .number {
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  border-radius: 2px;
+  background-color: #707070;
+}
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+.clock::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  z-index: 11;
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 2px 2px 0px rgba(82, 82, 81, 0.2);
+}
+.clock .hand.second {
+  width: 2px;
+  height: 110px;
+  background-color: rgb(255, 223, 39);
+}
+.clock .hand.minute {
+  width: 4px;
+  height: 100px;
+  background-color: #d4271e;
+}
+.clock .hand.hour {
+  width: 4px;
+  height: 70px;
+  background-color: #d4271e;
+}
+
+/* information container */
+
+.weather-container {
+  position: absolute;
+  width: 360px;
+  height: 270px;
+  top: 85px;
+  left: 450px;
+  display: flex;
+  flex-direction: column;
+}
+.city {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  font-family: URW DIN medium;
+  color: #565655;
+  font-size: 20px;
+}
+.date {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  font-family: URW DIN bold;
+  color: #313131;
+  font-size: 40px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #b5b7ae;
+  margin-bottom: 10px;
+}
+.weather {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-right: 25px;
+}
+.weather > div {
+  display: flex;
+  flex-direction: column;
+}
+.weather .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  margin-bottom: 10px;
+}
+.weather .temperature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  font-family: URW DIN bold;
+  color: #565655;
+  font-size: 35px;
+}
+.weather .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  font-family: URW DIN medium;
+  color: #565655;
+  font-size: 20px;
+}
+.icon span {
+  font-size: 70px;
+  color: #565655;
+}
+
+/* input */
+
+.input-container {  
+  margin-top: 5vh;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  height: 36px;
+}
+.input-container input {
+  all: unset;
+  width: 55%;
+  border-radius: 18px;
+  background-color: #dadcd1;
+  border: 3px solid #565655;
+  box-shadow: 3px 5px 0px rgba(34, 34, 34, 0.6);
+  font-family: URW DIN medium;
+  color: #313131;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.input-container input:focus {
+  border: 3px solid #c0c0bd;
+}
+.input-container .search {
+  all: unset;
+  height: 30px;
+  width: 30px;
+  border-radius: 18px;
+  background-color: #dadcd1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 3px solid #565655;
+  box-shadow: 2px 3px 0px rgba(34, 34, 34, 0.6);
+  color: #565655;
+}
+.input-container .search:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px;
+}
+.input-container .unit-converter {
+  all: unset;
+  height: 30px;
+  width: 30px;
+  border-radius: 18px;
+  background-color: #dadcd1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 3px solid #565655;
+  box-shadow: 2px 3px 0px rgba(34, 34, 34, 0.6);
+  font-family: URW DIN bold;
+  color: #565655;
+}
+.input-container .unit-converter:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px;
+}
