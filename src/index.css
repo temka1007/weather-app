@@ -149,14 +149,14 @@ main {
   bottom: 50%;
   left: 50%;
   transform-origin: bottom;
-  z-index: 10;
+  z-index: 5;
   transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
 }
 .clock::after {
   content: "";
   position: absolute;
   background-color: black;
-  z-index: 11;
+  z-index: 6;
   width: 12px;
   height: 12px;
   top: 50%;
@@ -188,7 +188,7 @@ main {
   width: 360px;
   height: 270px;
   top: 85px;
-  left: 450px;
+  left: 430px;
   display: flex;
   flex-direction: column;
 }
@@ -215,7 +215,6 @@ main {
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-right: 15px;
 }
 .weather > div {
   display: flex;
@@ -312,4 +311,23 @@ main {
 .input-container .unit-converter:active {
   transform: translate(2px, 2px);
   box-shadow: 0px 0px 0px 0px;
+}
+
+/* error */
+
+.error {
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.5);
+  border: 3px solid red;
+  backdrop-filter: blur(5px);
+  z-index: 7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error > div {
+  color: white;
+  font-family: URW DIN bold;
+  font-size: 40px;
 }

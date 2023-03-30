@@ -12,7 +12,31 @@ setClock();
 const input = document.querySelector("input");
 const searchBtn = document.querySelector(".search");
 
+function error404() {
+  const forecast = document.querySelector(".forecast-container");
+  const container = document.createElement("div");
+  const errorMessage = document.createElement("div")
+
+  container.classList.add("error")
+  errorMessage.textContent = "City not found ‾\\(o_o)/‾"
+
+  forecast.append(container)
+  container.append(errorMessage)
+
+  setTimeout(() => {
+    forecast.removeChild(forecast.lastChild)
+  }, 2000);
+}
+
+function loading() {
+  const forecast = document.querySelector(".forecast-container");
+  const container = document.createElement("div"); 
+
+  forecast.append(container)
+}
+
 async function getWeaterData(cityName) {
+
   try {
     const weather = await fetch(
       `http://api.weatherapi.com/v1/forecast.json?key=a1fd7a18c7df45cd9cf15211232403&q=${cityName}&days=3&aqi=no&alerts=no`,
@@ -36,7 +60,9 @@ async function getWeaterData(cityName) {
     const unitConverterBtn = document.querySelector(".unit-converter");
     unitConverterBtn.textContent = "F";
   } catch (error) {
-    console.log(error.message);
+    error404();
+  } finally {
+    console.log("error");
   }
 }
 
