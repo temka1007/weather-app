@@ -215,7 +215,7 @@ main {
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-right: 25px;
+  margin-right: 15px;
 }
 .weather > div {
   display: flex;
