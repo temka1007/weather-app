@@ -16,6 +16,4 @@ export default function setData(data) {
   dateDiv.textContent = `${today[1]} ${today[2]} ${today[3]}`;
   tomorrowDiv.textContent = `${tomorrow[1]} ${tomorrow[2]}`
   dayAfterTomorrowDiv.textContent = `${dayAfterTomorrow[1]} ${dayAfterTomorrow[2]}`
-
-  console.log(data);
 }
