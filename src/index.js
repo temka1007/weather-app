@@ -14,6 +14,9 @@ const searchBtn = document.querySelector(".search");
 
 function error404() {
   const forecast = document.querySelector(".forecast-container");
+
+  forecast.removeChild(forecast.lastChild)
+  
   const container = document.createElement("div");
   const errorMessage = document.createElement("div")
 
@@ -31,11 +34,19 @@ function error404() {
 function loading() {
   const forecast = document.querySelector(".forecast-container");
   const container = document.createElement("div"); 
+  const gif = document.createElement("div"); 
+
+  container.classList.add("loading")
 
   forecast.append(container)
+  container.appendChild(gif)
 }
 
+
+
 async function getWeaterData(cityName) {
+  let response = 0;
+  loading()
 
   try {
     const weather = await fetch(
@@ -44,6 +55,7 @@ async function getWeaterData(cityName) {
         mode: "cors",
       }
     );
+
     const data = await weather.json();
 
     today(data);
@@ -59,10 +71,17 @@ async function getWeaterData(cityName) {
 
     const unitConverterBtn = document.querySelector(".unit-converter");
     unitConverterBtn.textContent = "F";
+
+    if (weather.ok) {
+      response += 1;
+    }
   } catch (error) {
     error404();
   } finally {
-    console.log("error");
+    if (response === 1) {
+      const forecast = document.querySelector(".forecast-container");
+      forecast.removeChild(forecast.lastChild)
+    }
   }
 }
 

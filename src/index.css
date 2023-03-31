@@ -331,3 +331,24 @@ main {
   font-family: URW DIN bold;
   font-size: 40px;
 }
+
+
+
+.loading {
+  position: absolute;
+  background-color: rgba(0, 140, 255, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 7;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.loading > div {
+  height: 250px;
+  width: 250px;
+  background-image: url(./images/loading.gif);
+  background-size: cover;
+  border-radius: 50%;
+  border: 3px solid rgb(0, 94, 218);
+}
